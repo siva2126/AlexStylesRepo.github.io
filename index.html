@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alex Styles | Graphic Designer</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <!-- Header area -->
@@ -13,9 +16,9 @@
         <h1>Alex Styles</h1>
         <nav>
             <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" >About Me</a></li>
+                <li><a href="#portfolio" >Portfolio</a></li>
+                <li><a href="#contact" >Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -24,8 +27,8 @@
     <section id="about">
         <h2>About Me</h2>
         <p>
-            Hi, I'm Alex Styles, a passionate graphic designer specializing in 
-            modern branding, digital illustrations, and UI design. I enjoy creating 
+            Hi, I'm Alex Styles, a passionate graphic designer specializing in
+            modern branding, digital illustrations, and UI design. I enjoy creating
             clean, visually engaging designs that help brands communicate effectively.
         </p>
     </section>
@@ -34,24 +37,25 @@
     <section id="portfolio">
         <h2>Portfolio</h2>
         <div class="portfolio-grid">
-            <div class="project">
-                <a href="#">
-                    <img src="https://placehold.co/600x400" alt="Project 1">
-                    <p>Brand Identity Design</p>
-                </a>
+
+            <div class="project"
+                onclick="openModal('Brand Identity Design','Modern branding project including logo design, typography and color palette.')">
+                <img src="https://placehold.co/600x400" alt="Project 1">
+                <p>Brand Identity Design</p>
             </div>
-            <div class="project">
-                <a href="#">
-                    <img src="https://placehold.co/600x400" alt="Project 2">
-                    <p>Website UI Design</p>
-                </a>
+
+            <div class="project"
+                onclick="openModal('Website UI Design','User interface design for a responsive business website.')">
+                <img src="https://placehold.co/600x400" alt="Project 2">
+                <p>Website UI Design</p>
             </div>
-            <div class="project">
-                <a href="#">
-                    <img src="https://placehold.co/600x400" alt="Project 3">
-                    <p>Poster Design</p>
-                </a>
+
+            <div class="project"
+                onclick="openModal('Poster Design','Creative promotional poster created using modern typography.')">
+                <img src="https://placehold.co/600x400" alt="Project 3">
+                <p>Poster Design</p>
             </div>
+
         </div>
     </section>
 
@@ -68,7 +72,7 @@
             <label for="message">Message</label>
             <textarea id="message" name="message" placeholder="Your Message" required></textarea>
 
-            <button type="submit">Send Message</button>
+            <button type="submit" data-tooltip="Send your message to Alex">Send Message</button>
         </form>
     </section>
 
@@ -77,5 +81,16 @@
         <p>© 2026 Alex Styles. All rights reserved.</p>
     </footer>
 
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
+    
 </html>

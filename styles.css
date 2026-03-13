@@ -1,0 +1,266 @@
+/* =========================
+   CSS VARIABLES (Color System)
+========================= */
+
+:root {
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --bg: #f5f5f5;
+    --text: #333;
+}
+
+/* =========================
+   RESET & GLOBAL STYLES
+========================= */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* =========================
+   HEADER & NAVIGATION
+========================= */
+
+header {
+    background: var(--primary);
+    color: #fff;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 60px 10%;
+    background: #fff;
+}
+
+#about {
+    text-align: center;
+}
+
+/* =========================
+   PORTFOLIO GRID
+========================= */
+
+#portfolio{
+    text-align: center;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+/* Project link styling */
+.project a {
+    display: block;
+    text-decoration: none;
+    color: var(--text);
+    padding: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Project title */
+.project a p {
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Hover effect */
+.project a:hover {
+    color: var(--accent);
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+#contact {
+    background: #eef3f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contact form card */
+#contact form {
+    width: 100%;
+    max-width: 450px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Labels */
+form label {
+    font-weight: 600;
+}
+
+/* Inputs */
+input,
+textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input focus effect */
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 6px rgba(52,152,219,0.3);
+}
+
+/* Button */
+button {
+    padding: 12px;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Button hover */
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--primary);
+    color: #fff;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 590px) {
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    section{
+        padding: 30px 10%;
+    }
+
+}
